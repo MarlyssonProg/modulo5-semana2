@@ -1,0 +1,15 @@
+{% extends "index.html" %}
+{% load bootstrap5 %}
+
+{% block principal %}
+<h1>Login</h1>
+
+<form action="" method="post" novalidate>
+    {% csrf_token %}
+    <!--- Aqui o nome formulario referencia o mesmo nome que foi passado 
+    no contexto da views.py na função login_usuario no 1º if -->
+    {% bootstrap_form formulario %}
+    <hr>
+    <button type="submit" class="btn btn-primary">Logar</button>
+</form>
+{% endblock principal %}
